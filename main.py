@@ -9,7 +9,7 @@ import os
 HAIKU = (
     "The midnight stack trace\n"
     "blames a line I never wrote\n"
-    "it was never mine"
+    "someone else's code"
 )
 
 
@@ -22,6 +22,11 @@ def main() -> None:
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(HAIKU + "\n")
+    # Verify the written file round-trips exactly.
+    with open("/output/entry.txt", "rb") as f:
+        written = f.read()
+    if written.decode("utf-8") != HAIKU + "\n":
+        raise ValueError("written entry does not match the haiku")
     print(f"wrote {len(HAIKU)} characters to /output/entry.txt")
 
 

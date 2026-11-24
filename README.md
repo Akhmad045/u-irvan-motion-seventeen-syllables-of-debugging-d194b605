@@ -10,6 +10,6 @@ Entry for the [Seventeen Syllables of Debugging](https://make.fun/bounty/u-irvan
 
 > The midnight stack trace
 > blames a line I never wrote
-> it was never mine
+> someone else's code
 
 Referral code: `4g7knchf`
